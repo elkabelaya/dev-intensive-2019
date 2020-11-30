@@ -37,7 +37,7 @@ data class User (
         private var lastId: Int = -1
         fun makeUser(fullName:String?):User {
             lastId++
-            val (firstName, lastName) = parseFullName(fullName)
+            val (firstName, lastName) = parseFullName(fullName)?: "" to ""
             return User (id = "$lastId", firstName= firstName, lastName= lastName)
         }
     }
